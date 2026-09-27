@@ -1,0 +1,25 @@
+const enterButton = document.getElementById("enterButton");
+const secretDot = document.getElementById("secretDot");
+const message = document.getElementById("message");
+
+/* ----- ENTER BUTTON ----- */
+enterButton.addEventListener("click", () => {
+    message.textContent = "ACCESSING ARCHIVE...";
+
+    setTimeout(() => {
+
+        message.textContent = "ACCESS DENIED.";
+
+    }, 1500);
+
+}
+);
+
+/* ----- SECRET DOT ----- */
+
+secretDot.addEventListener("click", () => {
+
+    message.textContent =
+    "You found something that wasn't meant to be found.";
+
+});
