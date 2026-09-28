@@ -344,6 +344,7 @@ Secret Page
     transition: opacity 0.6s ease;
 
     z-index:10;
+    pointer-events: none;
 
 }
 
@@ -468,7 +469,7 @@ Secret Page
 }
 
 
-online {
+.online {
     color: #777;
 
     animation: onlinePulse 2s infinite;
@@ -573,6 +574,10 @@ online {
 /*====File gird==*/
 
 .file-grid {
+
+    position: relative;
+    z-index: 3;
+
     display: grid;
 
     grid-template-columns:
@@ -587,6 +592,7 @@ online {
 
 .file {
     position: relative;
+    z-index: 4;
     min-height: 210px;
 
     border: 1px solid #292929;
@@ -681,7 +687,9 @@ transition: left 0.4s;
 
     opacity: 1;
 
-    transform: scale(1.08);
+    filter: grayscale(0);
+
+    transform: scale(1.15);
 
 }
 
@@ -773,7 +781,7 @@ transition: left 0.4s;
         rgba(255, 255, 255, 0.025) 4px
     );
 
-    z-index: 20;
+    z-index: 1;
 
 }
 
