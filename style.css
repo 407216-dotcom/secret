@@ -334,7 +334,7 @@ Secret Page
     align-items:center;
     padding:30px;
 
-    font-family: "Courier New", monoscope;
+    font-family: "Courier New", monospace;
     font-size: clamp(18px, 3vw, 32px);
 
     letter-spacing: 2px;
@@ -913,4 +913,101 @@ transition: left 0.4s;
     .hidden-warning {
         display:none;
     }
+}
+
+#systemLogWindow {
+
+    position: fixed;
+    inset: 0;
+
+    display:flex;
+    flex-direction: column;
+
+    padding: 60px;
+
+    background:#050505;
+    opacity: 0;
+    pointer-events: none;
+
+    transform: scale(0.97);
+    transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+    z-index:50;
+
+}
+
+
+#systemLogWindow.show {
+
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+
+}
+
+.terminal-header {
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+    border-botom: 1px solid #333;
+
+    color: #777;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+
+}
+
+
+#closeLog {
+    cursor: pointer;
+    transition:0.2s;
+
+}
+
+#closeLog:hover {
+    color: white;
+}
+
+.terminal-body {
+    margin-top: 30px;
+
+    color: #777;
+    font-family: "Courier New", monospace;
+    font-size: 13px;
+
+    line-height: 2;
+
+    white-space: pre-line;
+
+}
+
+#logText {
+    max-width: 800px;
+}
+
+.terminal-cursor {
+    animation: terminalBlink 0.8s infinite;
+
+}
+
+@keyframes terminalBlink {
+
+    0%,
+    50% {
+    opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+
+    }
+    
 }
