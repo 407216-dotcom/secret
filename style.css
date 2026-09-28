@@ -314,3 +314,209 @@ SSCREEN NOISE
 
     }
 }
+
+
+/* ==========
+Secret Page
+=========*/
+
+#message {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content:center;
+
+    align-items:center;
+    padding:30px;
+
+    font-family: "Courier New", monoscope;
+    font-size: clamp(18px, 3vw, 32px);
+
+    letter-spacing: 2px;
+    text-align:center;
+
+    opacity:1;
+    transition: opacity 0.6s ease;
+
+    z-index:10;
+
+}
+
+
+#blackScreen {
+    position:fixed;
+
+    inset:0;
+
+    background: black;
+    opacity:0;
+
+    pointer-events: none;
+
+    transition: opacity 0.8s ease;
+
+    z-index:20;
+
+}
+
+#blackScreen.show {
+    opacity: 1;
+
+}
+
+
+
+/*=====ARchive====*/
+
+#archive {
+
+    position: fixed;
+
+    inset: 0;
+
+    padding:50px;
+    opacity:0;
+
+    pointer-events: none;
+    transition: opacity 1s ease;
+
+    background: radial-gradient(
+        circle at center,
+        #151515 0%
+        #050505 70%
+
+    );
+
+    z-index: 5;
+
+}
+
+
+#archive.show {
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+.archive-header {
+    border-bottom: 1px solid #333;
+
+    padding: bottom 20px;
+    margin-bottom: 35px;
+
+}
+
+
+.archive-title {
+
+    font-size: 28px;
+
+    letter-spacing: 6px;
+}
+
+.archive-status {
+    margin-top: 10px;
+    color: #666;
+
+    font-size: 12px;
+    letter-spacing:3px;
+
+}
+
+/*===FILE GRIID====*/
+
+.file-grid {
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
+
+    gap:20px;
+
+    max-width: 900px;
+
+}
+
+
+.file {
+
+    border: 1px solid #292929;
+
+    padding: 25px;
+    background:rgba(255, 255, 255, 0.02);
+
+    cursor:pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.file:hover {
+    border-color: #777;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    transform: translateY(-4px);
+
+}
+
+
+
+.file-icon {
+
+    font-size :30px;
+    margin-bottom:15px;
+
+}
+
+.file-name {
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.file-info {
+    margin-top: 8px;
+
+    color: #555;
+    font-size: 11px;
+
+}
+
+
+.archive-footer {
+    position: absolute;
+
+    bottom: 25px;
+
+    left:50px;
+    color: #444;
+
+    font-size:11px;
+
+    letter-spacing: 2px;
+
+}
+
+/*====MOBILE====*/
+
+@media (max-width: 600px) {
+
+    #archive {
+        padding:30px;
+
+    }
+
+    .archive-footer {
+        left: 30px;
+        
+    }
+}
