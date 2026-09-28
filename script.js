@@ -19,7 +19,6 @@ enterButton.addEventListener("click", () => {
 
 secretDot.addEventListener("click", () => {
 
-    message.textContent =
-    "You found something that wasn't meant to be found.";
+   window.location.href = "secret.html";
 
 });
