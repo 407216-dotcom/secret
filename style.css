@@ -165,7 +165,7 @@ button:hover {
 MESSAGE
 ----------- */
 
-#message {
+#homeMessage {
 
     margin-top: 30px;
 
@@ -196,6 +196,8 @@ Hidden SEcret Dot
 
     transition: 0.3s;
 
+    z-index: 100;
+
 }
 
 
@@ -221,7 +223,7 @@ SSCREEN NOISE
 
     opacity: 0.04;
 
-    z-index: 5;
+    z-index: 1;
 
     background-image:
     repeating-linear-gradient(
@@ -320,7 +322,7 @@ SSCREEN NOISE
 Secret Page
 =========*/
 
-#message {
+#secretMessage {
     position: fixed;
 
     inset: 0;
@@ -381,10 +383,10 @@ Secret Page
 
     pointer-events:none;
 
-    transition: opaciity 1s ease;
+    transition: opacity 1s ease;
     overflow:hidden;
 
-    background:fixedradial-gradient(
+    background:radial-gradient(
         circle at center,
         #151515 0%,
         #050505 70%
@@ -811,7 +813,7 @@ transition: left 0.4s;
     }
 
     to {
-        background-position: 060px;
+        background-position: 0 60px;
     }
 
 }

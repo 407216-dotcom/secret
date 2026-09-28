@@ -1,6 +1,6 @@
 const enterButton = document.getElementById("enterButton");
 const secretDot = document.getElementById("secretDot");
-const message = document.getElementById("message");
+const message = document.getElementById("homeMessage");
 
 /* ----- ENTER BUTTON ----- */
 enterButton.addEventListener("click", () => {

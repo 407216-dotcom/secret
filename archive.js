@@ -1,4 +1,4 @@
-const message = document.getElementById("message");
+const message = document.getElementById("secretMessage");
 const blackScreen = document.getElementById("blackScreen");
 const archive = document.getElementById("archive");
 
