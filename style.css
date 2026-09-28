@@ -953,7 +953,7 @@ transition: left 0.4s;
     justify-content: space-between;
 
     padding-bottom: 15px;
-    border-botom: 1px solid #333;
+    border-bottom: 1px solid #333;
 
     color: #777;
 
@@ -1009,5 +1009,210 @@ transition: left 0.4s;
         opacity: 0;
 
     }
-    
+
+}
+
+
+#imageWindow {
+
+    position: fixed;
+    inset:0;
+
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+
+    background: #030303;
+    opacity:0;
+    pointer-events: none;
+
+    transform: scale(0.97);
+
+    transition: 
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+    z-index:50;
+}
+
+
+#imageWindow.show {
+
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+
+}
+
+
+.image-header {
+
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #333;
+
+    color:#666;
+
+    font-family: "Courier New", monospace;
+    font-size:11px;
+    letter-spacing:3px;
+
+}
+
+
+
+#closeImage {
+    cursor: pointer;
+    transition:0.2s;
+
+}
+
+
+#closeImage:hover {
+    color:white;
+}
+
+.image-viewer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.corrupted-image {
+    position: relative;
+
+    width: min(600px, 88vh);
+    height: min(4000px, 55vh);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #333;
+
+    background: 
+    repeating-linear-gradient(
+        0deg,
+        #080808 0px,
+        #080808 3px,
+        #111 4px
+    );
+
+    overflow: hidden;
+
+    animation: imageGlitch 3s infinite;
+
+}
+
+
+.image-symbol {
+    font-family: "Courier New", monospace;
+
+    font-size: 120px;
+    color: #333;
+
+    text-shadow:
+    3px 0 #555,
+    -3px 0 #222;
+
+    animation: symbolGlitch 1.5s infinite;
+
+}
+
+
+.glitch-text {
+    position: absolute;
+
+    top:20px;
+    left: 20px;
+    color:#444;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+
+}
+
+
+
+.image-metadata {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    color:#444;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+#hiddenClue {
+    margin-top: 10px;
+    color: #222;
+
+    transition: color 0.5s;
+
+}
+
+
+.corrupted-image:hover + .image-metadata {
+    color: #777;
+
+}
+
+
+@keyframes imageGlitch {
+
+    0%,
+    90%,
+    100% {
+        transform: translate(0);
+
+    }
+
+    94% {
+        transform: translate(-3px, 2px);
+    }
+
+    96% {
+        transform: translate(2px, 1px);
+
+    }
+}
+
+
+@keyframes symbolGlitch {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        transform: translate(0);
+
+    }
+
+
+    50% {
+        opacity: 0.8;
+        transform: translate(2px);
+
+    }
+
+
+    52% {
+        opacity: 0.3;
+        transform: translate(-3px);
+
+    }
 }

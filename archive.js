@@ -83,3 +83,38 @@ closeLog.addEventListener("click", () => {
     systemLogWindow.classList.remove("show");
 
 });
+
+
+const imageFile = document.querySelector(".file:nth-child(3)");
+
+const imageWindow = document.getElementById("imageWindow");
+const closeImage = document.getElementById("closeImage");
+const hiddenClue = document.getElementById("hiddenClue");
+
+
+imageFile.addEventListener("click", () => {
+
+    imageWindow.classList.add("show");
+    hiddenClue.textContent = "...";
+
+    setTimeout(() => {
+
+        hiddenClue.textContent = "RECOVERY COMPLETE.";
+
+    }, 1500);
+
+    setTimeout(() => {
+
+        hiddenClue.textContent = "SOURCE: UNKNOWN";
+
+    }, 3000);
+
+});
+
+
+
+closeImage.addEventListener("click", () => {
+
+    imageWindow.classList.remove("show");
+
+});
