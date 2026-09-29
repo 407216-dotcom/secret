@@ -1378,3 +1378,213 @@ transition: left 0.4s;
 
     margin-top: 10px;
 }
+
+
+#unknownWindow {
+
+    position: fixed;
+    inset: 0;
+
+    display:flex;
+    flex-direction:column;
+
+    padding: 50px;
+
+    background: #030303;
+    opacity:0;
+
+    pointer-events: none;
+
+    transform: scale(0.97);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    z-index:50;
+
+}
+
+
+#unknownWindow.show {
+    opacity:1;
+    pointer-events: auto;
+    transform:scale(1);
+
+}
+
+
+.unknown-header {
+    display:flex;
+
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+
+    color: #666;
+
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+}
+
+
+#closeUnknown {
+    cursor:pointer;
+
+    transition: 0.2s
+}
+
+
+#closeUnknon:hover {
+    color:white;
+
+}
+
+
+.unknown-content {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+    font-family: "Courier New", monospace;
+
+}
+
+
+.unknown-title {
+    color:#333;
+    font-size: 12px;
+    letter-spacing:5px;
+
+}
+
+.unknown-clue {
+
+    color:#555;
+    font-size: 14px; 
+    letter-spacing:4px;
+    animation: clueFlicker 3s infinite;
+
+}
+
+
+@keyframes clueFlicker {
+
+    0%,
+    90%,
+    100% {
+        opacity:1;
+
+    }
+
+    92% {
+        opacity: 0.2;
+
+    }
+
+    94% {
+        opacity: 1;
+    }
+}
+
+
+#secretUnlocked {
+    display: none;
+    text-align: center;
+    margin-top:30px;
+    animation: unlockAppear 1s ease;
+
+}
+
+
+.unlock-title {
+    font-size: 24px;
+    letter-spacing:5px;
+    margin-bottom: 20px;
+
+}
+
+
+.unlock-text {
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin: 8px;
+    opacity: 0.7;
+
+}
+
+
+.unlock-warning {
+
+    margin-top: 35px;
+    font-size: 1px;
+    letter-spacing: 4px;
+
+}
+
+
+.glitch-line {
+
+    width: 100%;
+    height:1px;
+
+    background: #555;
+    margin-bottom: 30px;
+
+}
+
+
+
+#nodeButton {
+
+    margin-top:35px;
+    padding: 12px 25px;
+
+    background: transparent;
+
+    color:#eee;
+    border: 1px solid #555;
+
+    font-family: "Courier New", monospace;
+    letter-spacing:2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+#nodeButton:hover {
+    border-color: #fff;
+
+    letter-spacing: 4px;
+
+    transform: scale(1.05);
+
+}
+
+
+@keyframes unlockAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+
+    }
+
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+
+}

@@ -166,6 +166,34 @@ passwordInput.addEventListener("keydown", (event) => {
 });
 
 
+
+const unknownFile = document.querySelector(".unknown-file");
+
+const unknownWindow = document.getElementById("unknownWindow");
+const closeUnknown = document.getElementById("closeUnknown");
+
+
+unknownFile.addEventListener("click", () => {
+
+    unknownWindow.classList.add("show");
+
+});
+
+
+closeUnknown.addEventListener("click", () => {
+
+    unknownWindow.classList.remove("show");
+
+});
+
+const passwordRequired = document.getElementById("passwordRequired");
+
+const secretUnlocked = document.getElementById("secretUnlocked");
+const nodeButton = document.getElementById("nodeButton");
+
+
+secretUnlocked.style.display = "none";
+
 function checkPassword() {
 
     const password = passwordInput.value.trim();
@@ -174,10 +202,22 @@ function checkPassword() {
 
         passwordMessage.textContent = "ACCESS GRANTED.";
 
+        passwordInput.style.display = "none";
+        accessButton.style.display = "none";
+        passwordRequired.style.display = "none";
+
+        setTimeout(() => {
+
+            passwordMessage.style.display = "none";
+            secretUnlocked.style.display = "block";
+
+        }, 1200);
+
     } else {
 
         passwordMessage.textContent = "ACCESS DENIED.";
-         passwordInput.value = "";
-         
+
+        passwordInput.value = "";
+        
     }
 }
