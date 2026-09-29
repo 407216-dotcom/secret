@@ -42,7 +42,7 @@ systemLog.addEventListener("click", () => {
         "NODE: 001",
         "STATUS: ONLINE",
         "",
-        "12:04:17 CONNECTION ESTABLISHED",
+        "12:04:76 LOOK LOOK CONNECTION",
         "12:04:19 USER IDENTIFIED: UNKNOWN",
         "12:04:22 ACCSS LEVEL: UNKNOWN",
         "",
@@ -118,3 +118,66 @@ closeImage.addEventListener("click", () => {
     imageWindow.classList.remove("show");
 
 });
+
+
+
+const lockedFile = document.querySelector(".locked-file");
+
+const lockedWindow = document.getElementById("lockedWindow");
+
+const closeLocked = document.getElementById("closeLocked");
+
+const passwordInput = document.getElementById("passwordInput");
+
+const accessButton = document.getElementById("accessButton");
+
+const passwordMessage = document.getElementById("passwordMessage");
+
+
+lockedFile.addEventListener("click", () => {
+
+    lockedWindow.classList.add("show");
+
+    passwordInput.value = "";
+
+    passwordMessage.textContent = "";
+
+});
+
+
+closeLocked.addEventListener("click", () => {
+
+    lockedWindow.classList.remove("show");
+
+});
+
+
+accessButton.addEventListener("click", checkPassword);
+
+
+passwordInput.addEventListener("keydown", (event) => {
+
+    if (event.key === "Enter") {
+
+        checkPassword();
+
+
+    }
+});
+
+
+function checkPassword() {
+
+    const password = passwordInput.value.trim();
+
+    if (password === "0376") {
+
+        passwordMessage.textContent = "ACCESS GRANTED.";
+
+    } else {
+
+        passwordMessage.textContent = "ACCESS DENIED.";
+         passwordInput.value = "";
+         
+    }
+}
