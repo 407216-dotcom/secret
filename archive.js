@@ -191,6 +191,65 @@ const passwordRequired = document.getElementById("passwordRequired");
 const secretUnlocked = document.getElementById("secretUnlocked");
 const nodeButton = document.getElementById("nodeButton");
 
+const node002Window = document.getElementById("node002Window");
+const closeNode002 = document.getElementById("closeNode002");
+
+nodeButton.addEventListener("click", () => {
+
+    lockedWindow.classList.remove("show");
+
+    setTimeout(() => {
+
+        node002Window.classList.add("show");
+
+    }, 400);
+});
+
+closeNode002.addEventListener("click", () => {
+
+    node002Window.classList.remove("show");
+});
+
+
+const caseFileButton = document.getElementById("caseFileButton");
+const caseAccessScreen = document.getElementById("caseAccessScreen");
+const caseAccessText = document.getElementById("caseAccessText");
+
+
+caseFileButton.addEventListener("click", () => {
+
+    caseAccessScreen.classList.add("show");
+
+    const messages = [
+        "ACCESSING CASE FILE...",
+        "CHECKING CREDENTIALS...",
+        "USER DETECTED.",
+        "NODE 002 ACCESSED",
+        "TIME SPENT: 00:07",
+        "...",
+        "WHY ARE YOU STILL HERE?"
+    ];
+
+    let index = 0;
+
+    function showMessage() {
+
+        if (index >= messages.length) {
+            return;
+        }
+
+        caseAccessText.textContent = messages[index];
+
+        index++;
+
+        setTimeout(showMessage, 2300);
+
+    }
+
+    showMessage();
+
+});
+
 
 secretUnlocked.style.display = "none";
 
@@ -221,3 +280,5 @@ function checkPassword() {
         
     }
 }
+
+

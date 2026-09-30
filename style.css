@@ -1588,3 +1588,336 @@ transition: left 0.4s;
 
 
 }
+
+
+/*---node002--*/
+
+#node002Window {
+
+    position: fixed;
+    inset: 0;
+
+    background: #050505;
+
+    opacity:0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+
+    z-index:60;
+    overflow:hidden;
+
+}
+
+
+#node002Window.show {
+
+    opacity: 1;
+    pointer-events:auto;
+
+}
+
+
+.node002-top {
+
+    position: absolute;
+
+    top: 25px;
+    left: 35px;
+    right:35px;
+
+    display:flex;
+    justify-content: space-between;
+
+    color: #666;
+
+    font-family: "Courier New", monospace;
+    font-size:11px;
+    letter-spacing: 2px;
+
+    border-bottom:1ppx solid #1e1e1e;
+    padding-bottom: 12px;
+
+}
+
+
+#closeNode002 {
+    cursor:pointer;
+
+    color: #555;
+
+    transition:0.2s;
+
+}
+
+
+#closeNode002:hover {
+
+    color: #ddd;
+
+}
+
+
+.node002-file {
+
+    position:absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: min(650px, 85%);
+    min-height: 500px;
+
+    border:1px solid #292929;
+
+    background: #080808;
+
+    padding: 40px;
+
+    font-family: "Courier New", monospace;
+
+    box-shadow: 0 0 0 1px #080808,
+    0 20px 50px rgba(0,0,0,0.5);
+
+}
+
+
+.node002-small {
+
+    font-size: 10px;
+    color: #444;
+
+    letter-spacing:3px;
+    margin-bottom: 10px;
+
+}
+
+
+.node002-title {
+
+    font-size: 27px;
+
+    color: #aaa;
+    letter-spacing: 6px;
+    margin-bottom: 25px;
+
+}
+
+
+.node002-line {
+
+    width: 100%;
+
+    height:1px;
+
+    background: #222;
+    margin: 20px 0;
+}
+
+
+.case-row {
+
+    display: flex;
+    justify-content: space-between;
+
+    padding:9px 0;
+
+    font-size: 12px;
+    letter-spacing:2px;
+
+}
+
+
+.case-row span:first-child {
+
+    color:#555;
+
+}
+
+.case-row span:last-child {
+    color: #888;
+
+}
+
+
+.case-note {
+
+    margin-top:35px;
+
+}
+
+
+.note-label {
+    font-size: 10px;
+    color:#444;
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.ote-text {
+
+    color: #aaa;
+
+    font-size:15px;
+    letter-spacing: 3px;
+}
+
+
+
+.node002-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 45px;
+    color:#444;
+    font-size:9px;
+    letter-spacing:2px;
+
+}
+
+
+
+#caseFileButton {
+
+    display: block;
+
+    margin: 30px auto 0;
+    padding:11px 20px;
+    background: transparent;
+    border:1px solid #333;
+
+    color:#777;
+    font-family: 'Courier New', monospace;
+    font-size:11px;
+
+    letter-spacing:2px;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease,
+    border-color 0.2s ease;
+
+}
+
+
+
+#caseFileButton:hover {
+
+    color: #ddd;
+
+    border-color:#777;
+
+}
+
+
+
+.node002-footer {
+
+    position: absolute;
+
+    bottom: 15px;
+    right:20px;
+    color:#333;
+
+    font-size:9px;
+    letter-spacing:2px;
+
+}
+
+
+.cursor {
+
+    animation: nodeCursor 1s infinite;
+
+}
+
+
+@keyframes nodeCursor {
+
+    0%,
+    45% {
+        opacity:1;
+
+    }
+
+
+    46%,
+    100% {
+        opacity:0;
+
+    }
+}
+
+
+
+#caseAccessScreen {
+
+    position:fixed;
+    inset:0;
+    background:#030303;
+
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    pointer-events: none;
+
+    transition: opacity 0.5s ease;
+
+    z-index:70;
+
+    font-family: "Courier New", monospace;
+
+}
+
+
+#caseAccessScreen.show {
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+
+#caseAccessText {
+
+    color:#999;
+    font-size: 14px;
+    letter-spacing:40x;
+
+    text-align: center;
+
+}
+
+
+#casseAccessCursor {
+
+    color: #666;
+    
+    margin-top:10px;
+    font-size: 14px;
+    
+    animation : accessCursorBlink 0.8s infinite;
+
+}
+
+
+@keyframes accessCursorBlink {
+    0%,
+    45% {
+        opacity: 1;
+
+    }
+
+    46%,
+    100% {
+        opacity: 0;
+    }
+    
+}
