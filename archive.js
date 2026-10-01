@@ -216,39 +216,62 @@ const caseAccessScreen = document.getElementById("caseAccessScreen");
 const caseAccessText = document.getElementById("caseAccessText");
 
 
+const messages = [
+    "ACCESSING CASE FILE...",
+    "CHECKING CREDENTIALS...",
+    "USER DETECTED.",
+    "NODE 002 ACCESSED",
+    "TIME SPENT: 00:07",
+    "...",
+    "WHY ARE YOU STILL HERE?"
+];
+
+
 caseFileButton.addEventListener("click", () => {
 
-    caseAccessScreen.classList.add("show");
+    // Hide the Node 002 file
+    node002Window.classList.remove("show");
 
-    const messages = [
-        "ACCESSING CASE FILE...",
-        "CHECKING CREDENTIALS...",
-        "USER DETECTED.",
-        "NODE 002 ACCESSED",
-        "TIME SPENT: 00:07",
-        "...",
-        "WHY ARE YOU STILL HERE?"
-    ];
+    // Start loading screen
+    setTimeout(() => {
 
-    let index = 0;
+        caseAccessScreen.classList.add("show");
 
-    function showMessage() {
+        let index = 0;
 
-        if (index >= messages.length) {
-            return;
+        function showMessage() {
+
+            if (index >= messages.length) {
+
+                setTimeout(() => {
+
+                    caseAccessScreen.classList.remove("show");
+
+                    setTimeout(() => {
+
+                        caseOptions.classList.add("show");
+
+                    }, 500);
+
+                }, 1200);
+
+                return;
+            }
+
+            caseAccessText.textContent = messages[index];
+
+            index++;
+
+            setTimeout(showMessage, 1200);
+
         }
 
-        caseAccessText.textContent = messages[index];
+        showMessage();
 
-        index++;
-
-        setTimeout(showMessage, 2300);
-
-    }
-
-    showMessage();
+    }, 400);
 
 });
+
 
 
 secretUnlocked.style.display = "none";
@@ -282,3 +305,197 @@ function checkPassword() {
 }
 
 
+const file003Window = document.getElementById("file003Window");
+const closeFile003 = document.getElementById("closeFile003");
+
+
+closeFile003.addEventListener("click", () => {
+
+    file003Window.classList.remove("show");
+
+});
+
+
+const file003Clue = document.getElementById("file003Clue");
+const file003Result = document.getElementById("file003Result");
+const resultText = document.getElementById("resultText");
+
+
+file003Clue.addEventListener("click", () => {
+
+    file003Result.classList.add("show");
+
+    resultText.textContent = "REFERENCE ACCEPTED";
+
+    setTimeout(() => {
+
+        resultText.textContent = "SEARCHING ARCHIVE...";
+
+        setTimeout(() => {
+
+            resultText.textContent = "RESULT FOUND";
+
+        }, 2500);
+
+    }, 2000);
+});
+
+
+const caseOptions = document.getElementById("caseOptions");
+
+const lastSeenOption = document.getElementById("lastSeenOption");
+const dateOption = document.getElementById("dateOption");
+const fileStatusOption = document.getElementById("fileStatusOption");
+const record002Option = document.getElementById("record002Option");
+
+
+const caseBackButton = document.getElementById("caseBackButton");
+
+
+caseBackButton.addEventListener("click", () => {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        node002Window.classList.add("show");
+
+    }, 500);
+
+});
+
+
+lastSeenOption.addEventListener("click", () => {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        caseAccessScreen.classList.add("show");
+
+        caseAccessText.textContent = "LAST SEEN: NODE 001";
+
+        setTimeout(() => {
+
+            caseAccessText.textContent = "TIME:03:17";
+
+            setTimeout(() => {
+
+                caseAccessText.textContent = "NO EXIT RECORD FOUND";
+
+                setTimeout(() => {
+
+                    caseAccessText.textContent = "LAST SIGNAL: NODE 002";
+
+                }, 1800);
+
+            }, 1800);
+
+        }, 1800);
+
+    }, 500);
+
+});
+
+
+
+dateOption.addEventListener("click", () => {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        caseAccessScreen.classList.add("show");
+
+        caseAccessText.textContent = "DATE: UNKNOWN";
+
+        setTimeout(() => {
+
+            caseAccessText.textContent = "RECORD CORRUPTED";
+
+        }, 2000);
+
+    }, 500);
+
+});
+
+
+
+fileStatusOption.addEventListener("click", () => {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        caseAccessScreen.classList.add("show");
+
+        caseAccessText.textContent = "STATUS: INCOMPLETE";
+
+        setTimeout(() => {
+
+            caseAccessText.textContent = "MISSING DATA";
+
+            setTimeout(() => {
+
+                caseAccessText.textContent = "RECOVERED: 49%";
+
+                setTimeout(() => {
+
+                    caseAccessText.textContent = "ONE RECORD WAS REMOVED";
+
+                }, 1800);
+
+            }, 1800);
+
+        }, 1800);
+
+    }, 500);
+
+});
+
+
+
+record002Option.addEventListener("click", () => {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        caseAccessScreen.classList.add("show");
+
+        caseAccessText.textContent = "RECORD 002";
+
+        setTimeout(() => {
+
+            caseAccessText.textContent = "REFERENCE VERIFIED";
+
+            setTimeout(() => {
+
+                caseAccessText.textContent = "REFERENCE ACCEPTED";
+
+
+            }, 1800);
+
+        }, 1800);
+
+
+    }, 500);
+    
+});
+
+
+const optionBackButton = document.getElementById("optionBackButton");
+
+
+optionBackButton.addEventListener("click", () => {
+
+    caseAccessScreen.classList.remove("show");
+
+    setTimeout(() => {
+
+        caseOptions.classList.add("show");
+        optionBackButton.style.display = "block";
+
+    }, 500);
+
+});
