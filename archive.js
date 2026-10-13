@@ -459,8 +459,6 @@ record002Option.addEventListener("click", () => {
 
     caseOptions.classList.remove("show");
 
-    setTimeout(() => {
-
         caseAccessScreen.classList.add("show");
 
         caseAccessText.textContent = "RECORD 002";
@@ -473,13 +471,23 @@ record002Option.addEventListener("click", () => {
 
                 caseAccessText.textContent = "REFERENCE ACCEPTED";
 
+                setTimeout(() => {
+
+                    caseAccessScreen.classList.remove("show");
+
+                    setTimeout(() => {
+
+                        node002End.classList.add("show");
+
+                    }, 500);
+
+
+                }, 1800);
+
 
             }, 1800);
 
         }, 1800);
-
-
-    }, 500);
     
 });
 
@@ -499,3 +507,35 @@ optionBackButton.addEventListener("click", () => {
     }, 500);
 
 });
+
+
+const node002End = document.getElementById("node002End");
+const continueNode003 = document.getElementById("continueNode003");
+
+const node003Window = document.getElementById("node003Window");
+
+
+continueNode003.addEventListener("click", () => {
+
+    node002End.classList.remove("show");
+
+    setTimeout(() => {
+
+        node003Window.classList.add("show");
+
+    }, 700);
+
+});
+
+
+function finishNode002() {
+
+    caseOptions.classList.remove("show");
+
+    setTimeout(() => {
+
+        node002End.classList.add("show");
+
+    }, 500);
+
+}

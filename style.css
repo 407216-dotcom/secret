@@ -1289,7 +1289,7 @@ transition: left 0.4s;
 
     gap: 18px;
 
-    font-family: "Coureir New", monospace;
+    font-family: "Courier New", monospace;
 
 }
 
@@ -1435,7 +1435,7 @@ transition: left 0.4s;
 }
 
 
-#closeUnknon:hover {
+#closeUnknown:hover {
     color:white;
 
 }
@@ -2278,3 +2278,185 @@ transition: left 0.4s;
     border-color: #777;
     
 }
+
+
+#node002End {
+    position: fixed;
+    inset:0;
+
+    background: #050505;
+
+    opacity: 0;
+
+    pointer-events: none;
+    transition: opacity 0.6s ease;
+    z-index: 90;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+#node002End.show {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+.node002End-content {
+
+    width: min(600px, 80vw);
+    padding:45px;
+
+    border: 1px solid #292929;
+
+    background: #080808;
+
+    text-align:center;
+    font-family: "Courier New", monospace;
+
+}
+
+
+
+.node002End-small {
+
+    color: #555;
+
+    font-size:11px;
+
+    letter-spacing: 3px;
+    margin-bottom:25px;
+}
+
+
+.node002End-line {
+
+    width: 100%;
+    height:1px;
+
+    background: #292929;
+    margin-bottom: 30px;
+    
+}
+
+
+.node002End-text {
+
+    color:#aaa;
+
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 12px 0;
+
+}
+
+
+.node002End-file {
+
+    margin-top: 30px;
+    color:#777;
+
+    font-size:12px;
+    letter-spacing: 3px;
+}
+
+
+#continueNode003 {
+
+    margin-top: 35px;
+    padding: 12px 28px;
+
+    background:#080808;
+
+    border: 1px solid #444;
+    color:#aaa;
+
+    font-family: "Courier New", monospace;
+
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.25s; 
+}
+
+
+#continueNode003:hover {
+
+    border-color:#888;
+    color: white;
+
+    background: #111;
+
+}
+
+
+#node003Window {
+    position: fixed;
+    inset:0;
+
+    background:#020202;
+
+    opacity: 0;
+
+    pointer-events:none;
+    transition: opacity 1s ease;
+    z-index: 100;
+
+    display: flex;
+
+    justify-content:center;
+    align-items:center;
+
+}
+
+
+#node003Window.show {
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.node003-content {
+
+    text-align: center;
+    font-family: "Courier New", monospace;
+
+}
+
+
+.node003-small {
+
+    color: #444;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom:25px;
+
+}
+
+.node003-title {
+
+    color: #aaa;
+
+    font-size: 32px;
+    letter-spacing:8px;
+
+}
+
+
+
+.node003-status {
+
+    margin-top: 15px;
+    color:#555;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+}
+
