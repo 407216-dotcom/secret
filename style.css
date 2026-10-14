@@ -2460,3 +2460,46 @@ transition: left 0.4s;
 
 }
 
+
+
+.container img {
+    position: fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit: cover;
+
+    z-index: -1;
+    
+}
+
+
+#enterButton {
+
+    background: transparent;
+    color:#eeeeee;
+    border:1px solid #884949;
+    border-radius: 5px;
+
+    padding:12px 32px;
+
+    font-family: "Courier New", monospace;
+    letter-spacing: 3px;
+
+    cursor:pointer;
+    transition: 0.3s ease;
+    
+}
+
+
+#enterButtton:hover {
+    border-color: #b65b5b;
+    color:#b65b5b;
+}
+
+
+.subtitle {
+    min-height: 1.5em;
+}
