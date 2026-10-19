@@ -425,7 +425,7 @@ Secret Page
     justify-content:space-between;
     align-items: flex-start;
 
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #e0d5d5;
      padding-bottom: 20px;
 
      margin-bottom:25px;
@@ -434,6 +434,7 @@ Secret Page
 
 
 .archive-title{
+    color: #c03f3f;
 
     font-size: 30px;
 
@@ -448,7 +449,7 @@ Secret Page
 .archive-subtitle {
 
     margin-top: 8px;
-    color:#555;
+    color:#dfd0d0;
 
     font-size: 10px;
     letter-spacing:3px;
@@ -534,22 +535,19 @@ Secret Page
 
 .warning-bar {
 
-    margin-bottom: 30px;
-    padding:9px;
+    position: relative;
+    z-index: 9999;
 
+    margin-bottom: 30px;
+    padding: 9px;
     text-align: center;
 
-
-    border: 1px solid #292929;
-
-    background: rgba(255, 255, 255, 0.015);
-
-    color:#555;
+    border: 1px solid #270606;
+    background: #c03f3f;
+    color:#270606;
 
     font-size: 10px;
     letter-spacing: 4px;
-
-    animation: warningFlicker 4s infinite;
 
 }
 
@@ -558,7 +556,7 @@ Secret Page
 
     margin: 0 15px;
 
-    color: #777;
+    color: #270606;
 
 }
 
@@ -599,6 +597,7 @@ Secret Page
     gap: 18px;
 
     max-width: 950px;
+    justify-items: start;
 
 }
 
@@ -766,7 +765,7 @@ transition: left 0.4s;
 
 
 .locked-file {
-    opacity:0.65;
+    opacity:1;
 
 }
 
@@ -926,7 +925,7 @@ transition: left 0.4s;
     justify-content: space-between;
 
     padding-bottom: 15px;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #270606;
 
     color: #777;
 
@@ -2495,15 +2494,20 @@ transition: left 0.4s;
 
 
 .file-template {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+   display:block;
+   width:100%;
+   height: 100%;
+   object-fit: contain;
+
 }
 
 .file {
-    padding:0;
-    overflow:hidden;
-    cursor:pointer;
-    
+    width:100%;
+    height: fit-content;
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+    line-height: 0;
+
 }
