@@ -2,6 +2,8 @@
 BASIC RESET 
 ----------- */
 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 * {
     margin:0;
     padding: 0;
@@ -471,41 +473,29 @@ Secret Page
 
 .system-info {
 
+    position: fixed;
+    right:35px;
+    bottom: 48px;
+
+    font-family: 'Share Tech Mono', monospace;
+
     text-align: right;
 
-    color:#555;
+    color:#beb5b5;
     font-size: 10px;
 
     line-height: 1.8;
 
     letter-spacing: 2px;
+    z-index :10;
 
 }
 
 
 .online {
-    color: #777;
+    font-family: 'Share Tech Mono', monospace;
 
-    animation: onlinePulse 2s infinite;
-
-}
-
-
-@keyframes onlinePulse {
-
-    0% {
-        opacity: 0.4;
-
-    }
-
-    50% {
-        opacity: 1;
-
-    }
-
-    100% {
-        opacity:0.4;
-    }
+    color: #2a9957;
 
 }
 
@@ -802,15 +792,15 @@ transition: left 0.4s;
 
     position: absolute;
 
-    bottom: 25px;
-    left: 50px;
+    bottom: 45px;
+    left: 37px;
     right: 50px;
 
     display: flex;
 
     justify-content: space-between;
 
-    color: #444;
+    color: #c5c2c2;
 
     font-size: 11px;
 
