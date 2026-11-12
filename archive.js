@@ -31,6 +31,14 @@ const systemLog = document.querySelector(".file:nth-child(2)");
 
 systemLog.addEventListener("click", () => {
 
+    const sysBox = document.getElementById("sysBox");
+
+    sysBox.classList.remove("play-animation");
+
+    void sysBox.offsetWidth;
+
+    sysBox.classList.add("play-animation");
+
     systemLogWindow.classList.add("show");
 
     logText.textContent = "";
